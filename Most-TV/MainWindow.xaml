@@ -1,27 +1,18 @@
-﻿<Window x:Class="TelecomApp.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Telecom App" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Просмотр">
-                <MenuItem Header="Показать всех клиентов" Click="ShowCustomers_Click"/>
-                <MenuItem Header="Показать все услуги" Click="ShowServices_Click"/>
-                <MenuItem Header="Показать подписки" Click="ShowSubscriptions_Click"/>
-                <MenuItem Header="Показать сотрудников" Click="ShowEmployees_Click"/>
-            </MenuItem>
-            <MenuItem Header="Добавить">
-                <MenuItem Header="Добавить клиента" Click="AddCustomer_Click"/>
-                <MenuItem Header="Добавить услугу" Click="AddService_Click"/>
-                <MenuItem Header="Добавить подписку" Click="AddSubscription_Click"/>
-                <MenuItem Header="Добавить сотрудника" Click="AddEmployee_Click"/>
-            </MenuItem>
-            <MenuItem Header="Справка" Click="ShowHelp_Click"/>
-            <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Click="Exit_Click"/>
-            </MenuItem>
-        </Menu>
-
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" />
-    </DockPanel>
-</Window>
+﻿<Controls:MetroWindow x:Class="TelecomApp.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="TelecomApp" Height="550" Width="800">
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Добавить клиента" Width="200" Height="40" Margin="0,0,0,10" Click="AddCustomer_Click"/>
+            <Button Content="Добавить подписку" Width="200" Height="40" Margin="0,0,0,10" Click="AddSubscription_Click"/>
+            <Button Content="Показать клиентов" Width="200" Height="40" Margin="0,0,0,10" Click="ShowCustomers_Click"/>
+            <Button Content="Показать подписки" Width="200" Height="40" Margin="0,0,0,10" Click="ShowSubscriptions_Click"/>
+            <Button Content="Добавить услугу" Width="200" Height="40" Margin="0,0,0,10" Click="AddService_Click"/>
+            <Button Content="Добавить сотрудника" Width="200" Height="40" Margin="0,0,0,10" Click="AddEmployee_Click"/>
+            <Button Content="Показать сотрудников" Width="200" Height="40" Margin="0,0,0,10" Click="ShowEmployees_Click"/>
+            <Button Content="Показать услуги" Width="200" Height="40" Click="ShowServices_Click"/>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>

@@ -14,9 +14,9 @@ namespace TelecomApp
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(FullNameTextBox.Text))
+            if (string.IsNullOrWhiteSpace(NameTextBox.Text))
             {
-                MessageBox.Show("Введите ФИО");
+                MessageBox.Show("Введите имя клиента");
                 return;
             }
 
@@ -24,10 +24,9 @@ namespace TelecomApp
 
             var customer = new Customer
             {
-                FullName = FullNameTextBox.Text,
+                FullName = NameTextBox.Text,
                 Email = EmailTextBox.Text,
-                PhoneNumber = PhoneTextBox.Text,
-                RegistrationDate = DateTime.UtcNow  // Здесь исправлено
+                PhoneNumber = PhoneTextBox.Text
             };
 
             context.Customers.Add(customer);

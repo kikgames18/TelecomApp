@@ -1,0 +1,23 @@
+<Window x:Class="TelecomApp.ServiceListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Услуги" Height="400" Width="700">
+    <Grid Margin="10">
+        <DataGrid x:Name="ServicesDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="False"
+                  RowEditEnding="ServicesDataGrid_RowEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="50"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="Цена в месяц" Binding="{Binding MonthlyFee}" Width="100" StringFormat="C"/>
+                <DataGridTemplateColumn Header="Действия" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Удалить" Click="DeleteService_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

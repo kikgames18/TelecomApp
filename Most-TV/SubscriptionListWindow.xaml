@@ -1,0 +1,24 @@
+<Window x:Class="TelecomApp.SubscriptionListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Подписки" Height="400" Width="700">
+	<Grid Margin="10">
+		<DataGrid x:Name="SubscriptionsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="False"
+                  RowEditEnding="SubscriptionsDataGrid_RowEditEnding">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="50"/>
+				<DataGridTextColumn Header="Клиент" Binding="{Binding Customer.FullName}" Width="*"/>
+				<DataGridTextColumn Header="Услуга" Binding="{Binding Service.Name}" Width="*"/>
+				<DataGridTextColumn Header="Дата начала" Binding="{Binding StartDate, StringFormat=d}" Width="120"/>
+				<DataGridTextColumn Header="Дата окончания" Binding="{Binding EndDate, StringFormat=d}" Width="120"/>
+				<DataGridTemplateColumn Header="Действия" Width="100">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Content="Удалить" Click="DeleteSubscription_Click"/>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</Window>

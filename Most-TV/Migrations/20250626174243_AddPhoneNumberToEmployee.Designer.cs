@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TelecomApp.Data;
@@ -11,9 +12,11 @@ using TelecomApp.Data;
 namespace Most_TV.Migrations
 {
     [DbContext(typeof(TelecomContext))]
-    partial class TelecomContextModelSnapshot : ModelSnapshot
+    [Migration("20250626174243_AddPhoneNumberToEmployee")]
+    partial class AddPhoneNumberToEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,10 +66,6 @@ namespace Most_TV.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("text");
 
